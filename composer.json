@@ -36,7 +36,7 @@
 	"prefer-stable": true,
 	"autoload":{
 		"psr-0":{
-			"Avisota\\Contao\\Message\\Image": "src/"
+			"Avisota\\Contao\\Message\\Element\\Gallery": "src/"
 		}
 	},
 	"extra": {
