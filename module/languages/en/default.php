@@ -8,18 +8,13 @@
  *
  * @copyright  bit3 UG 2013
  * @author     Tristan Lins <tristan.lins@bit3.de>
- * @package    avisota/contao-message-element-gallery
+ * @package    avisota/contao-core
  * @license    LGPL-3.0+
  * @filesource
  */
 
 
 /**
- * Message elements
+ * Mailing content elements
  */
-$GLOBALS['TL_MCE']['images'][] = 'gallery';
-
-/**
- * Events
- */
-$GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Message\Element\Gallery\DefaultRenderer';
+$GLOBALS['TL_LANG']['MCE']['gallery']   = array('Gallery', 'Generates a lightbox image gallery.');
