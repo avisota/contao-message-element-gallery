@@ -25,6 +25,7 @@ use Contao\Doctrine\ORM\Entity;
 use Contao\Doctrine\ORM\EntityAccessor;
 use ContaoCommunityAlliance\Contao\Bindings\ContaoEvents;
 use ContaoCommunityAlliance\Contao\Bindings\Events\Controller\GetArticleEvent;
+use ContaoCommunityAlliance\Contao\Bindings\Events\Image\ResizeImageEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -60,10 +61,94 @@ class DefaultRenderer implements EventSubscriberInterface
 			return;
 		}
 
+		/** @var EventDispatcher $eventDispatcher */
+		$eventDispatcher = $GLOBALS['container']['event-dispatcher'];
+
 		/** @var EntityAccessor $entityAccessor */
 		$entityAccessor = $GLOBALS['container']['doctrine.orm.entityAccessor'];
 
 		$context = $entityAccessor->getProperties($content);
+
+		$size    = $content->getSize();
+		$images  = array();
+		$sorting = array();
+		foreach ($context['multiSRC'] as $index => $file) {
+			$context['multiSRC'][$index] = $file = \Compat::resolveFile($file);
+
+			switch ($content->getSortBy()) {
+				case 'name_asc':
+				case 'name_desc':
+					$sorting[] = basename($file);
+					break;
+
+				case 'date_asc':
+				case 'date_desc':
+					$sorting[] = filemtime(TL_ROOT . DIRECTORY_SEPARATOR . $file);
+					break;
+
+				case 'random':
+					$sorting[] = rand(-PHP_INT_MAX, PHP_INT_MAX);
+			}
+
+			$resizeImageEvent = new ResizeImageEvent($file, $size[0], $size[1], $size[2]);
+			$eventDispatcher->dispatch(ContaoEvents::IMAGE_RESIZE, $resizeImageEvent);
+
+			$images[] = $resizeImageEvent->getResultImage();
+		}
+
+		switch ($content->getSortBy()) {
+			case 'name_asc':
+				uasort($sorting, 'strnatcasecmp');
+				break;
+
+			case 'name_desc':
+				uasort($sorting, 'strnatcasecmp');
+				$sorting = array_reverse($sorting, true);
+				break;
+
+			case 'random':
+			case 'date_asc':
+				asort($sorting);
+				break;
+
+			case 'date_desc':
+				arsort($sorting);
+				break;
+
+			default:
+				$sorting = false;
+		}
+
+		if ($sorting) {
+			$sorting = array_keys($sorting);
+			uksort(
+				$images,
+				function ($a, $b) use ($sorting) {
+					return array_search($a, $sorting) - array_search($b, $sorting);
+				}
+			);
+		}
+
+		$context['rows'] = array();
+		while (count($images)) {
+			$row    = array_slice($images, 0, $content->getPerRow());
+			$images = array_slice($images, $content->getPerRow());
+
+			while (count($row) < $content->getPerRow()) {
+				$row[] = false;
+			}
+
+			$context['rows'][] = $row;
+		}
+
+		$styles  = array();
+		$margins = $content->getImagemargin();
+		foreach (array('top', 'right', 'bottom', 'left') as $property) {
+			if (!empty($margins[$property])) {
+				$styles[] = sprintf('padding-%s:%s%s', $property, $margins[$property], $margins['unit']);
+			}
+		}
+		$context['styles'] = implode(';', $styles);
 
 		$template = new \TwigTemplate('avisota/message/renderer/default/mce_gallery', 'html');
 		$buffer   = $template->parse($context);

@@ -7,6 +7,14 @@
 
 {% block content %}
 	{% spaceless %}
-		/** missing implementation */
+		<table>
+			{% for row in rows %}
+				<tr>
+					{% for src in row %}
+						<td{% if styles %} style="{{ styles }}"{% endif %}>{{ src|image }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
 	{% endspaceless %}
 {% endblock %}
