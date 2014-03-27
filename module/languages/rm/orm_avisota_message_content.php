@@ -12,8 +12,8 @@
  */
 
 
-$GLOBALS['TL_LANG']['orm_avisota_message_content']['multiSRC']['0'] = 'Datotecas da funtauna';
-$GLOBALS['TL_LANG']['orm_avisota_message_content']['multiSRC']['1'] = 'Tscherna ina u pliras datotecas u ordinaturs da la structura d\'ordinaturs. Sche ti tschernas in ordinatur vegnan tut las datotecas lien integradas automaticamain.';
+$GLOBALS['TL_LANG']['orm_avisota_message_content']['imageSources']['0'] = 'Datotecas da funtauna';
+$GLOBALS['TL_LANG']['orm_avisota_message_content']['imageSources']['1'] = 'Tscherna ina u pliras datotecas u ordinaturs da la structura d\'ordinaturs. Sche ti tschernas in ordinatur vegnan tut las datotecas lien integradas automaticamain.';
 $GLOBALS['TL_LANG']['orm_avisota_message_content']['perRow']['0']   = 'Miniaturas per lingia';
 $GLOBALS['TL_LANG']['orm_avisota_message_content']['perRow']['1']   = 'Il dumber da miniaturas da maletgs per lingia.';
 $GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy']['0']   = 'Zavrar tenor';

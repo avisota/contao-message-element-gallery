@@ -69,11 +69,11 @@ class DefaultRenderer implements EventSubscriberInterface
 
 		$context = $entityAccessor->getProperties($content);
 
-		$size    = $content->getSize();
+		$size    = $content->getImageSize();
 		$images  = array();
 		$sorting = array();
-		foreach ($context['multiSRC'] as $index => $file) {
-			$context['multiSRC'][$index] = $file = \Compat::resolveFile($file);
+		foreach ($context['imageSources'] as $index => $file) {
+			$context['imageSources'][$index] = $file = \Compat::resolveFile($file);
 
 			switch ($content->getSortBy()) {
 				case 'name_asc':

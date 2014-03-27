@@ -21,15 +21,15 @@
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = array
 (
 	'type'   => array('type', 'cell', 'headline'),
-	'source' => array('multiSRC'),
-	'image'  => array('size', 'imagemargin', 'perRow', 'sortBy'),
+	'source' => array('imageSources'),
+	'image'  => array('imageSize', 'imageMargin', 'perRow', 'sortBy'),
 	'expert' => array(':hide', 'cssID', 'space'),
 );
 
 
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['multiSRC'] = array
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['multiSRC'],
+	'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['imageSources'],
 	'exclude'   => true,
 	'inputType' => 'fileTree',
 	'eval'      => array(
