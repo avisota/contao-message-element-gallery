@@ -20,10 +20,11 @@
  */
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = array
 (
-	'type'   => array('type', 'cell', 'headline'),
-	'source' => array('imageSources'),
-	'image'  => array('imageSize', 'imageMargin', 'perRow', 'sortBy'),
-	'expert' => array(':hide', 'cssID', 'space'),
+	'type'      => array('type', 'cell', 'headline'),
+	'source'    => array('imageSources'),
+	'image'     => array('imageSize', 'imageMargin', 'perRow', 'sortBy'),
+	'expert'    => array(':hide', 'cssID', 'space'),
+	'published' => array('invisible'),
 );
 
 
@@ -33,10 +34,10 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = ar
 	'exclude'   => true,
 	'inputType' => 'fileTree',
 	'eval'      => array(
-		'fieldType'  => 'checkbox',
-		'files'      => true,
-		'mandatory'  => true,
-		'multiple'   => true,
+		'fieldType' => 'checkbox',
+		'files'     => true,
+		'mandatory' => true,
+		'multiple'  => true,
 		// does not work until DCG can handle this
 		// 'orderField' => 'orderSRC',
 	),
@@ -50,7 +51,7 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['orderSRC'] = array
 	),
 );
 */
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow']   = array
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['perRow'],
 	'default'   => 4,
@@ -59,7 +60,7 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow']   = array
 	'options'   => array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12),
 	'eval'      => array('tl_class' => 'w50')
 );
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy']   = array
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy'],
 	'exclude'   => true,
