@@ -8,9 +8,9 @@
  *
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  *
- * last-updated: 2014-03-11T16:04:04+01:00
+ * last-updated: 2014-03-25T14:18:42+01:00
  */
 
-
 $GLOBALS['TL_LANG']['MCE']['gallery']['0'] = 'Galerie';
+$GLOBALS['TL_LANG']['MCE']['gallery']['1'] = 'Erzeugt eine Lightbox-Bildgalerie.';
 
