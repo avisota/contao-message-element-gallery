@@ -11,6 +11,6 @@
  * last-updated: 2014-03-25T14:18:43+01:00
  */
 
-
 $GLOBALS['TL_LANG']['MOD']['avisota-message-element-gallery']['0'] = 'Avisota-Nachrichtenelement "Galerie"';
+$GLOBALS['TL_LANG']['MOD']['avisota-message-element-gallery']['1'] = '"Galerie"-Nachrichtenelement für Avisota-Nachrichten';
 
