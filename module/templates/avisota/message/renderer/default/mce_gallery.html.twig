@@ -7,6 +7,9 @@
 
 {% block content %}
 	{% spaceless %}
+		{% if headline %}
+			<{{ hl }}>{{ headline }}</{{ hl }}>
+		{% endif %}
 		<table>
 			{% for row in rows %}
 				<tr>
