@@ -13,8 +13,7 @@
  * @filesource
  */
 
-
 /**
  * Mailing content elements
  */
-$GLOBALS['TL_LANG']['MCE']['gallery']   = array('Gallery', 'Generates a lightbox image gallery.');
+$GLOBALS['TL_LANG']['MCE']['gallery'] = array('Gallery', 'Generates a lightbox image gallery.');
