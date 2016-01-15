@@ -6,18 +6,18 @@
 {% set headline = headline.value %}
 
 {% block content %}
-	{% spaceless %}
-		{% if headline %}
-			<{{ hl }}>{{ headline }}</{{ hl }}>
-		{% endif %}
-		<table>
-			{% for row in rows %}
-				<tr>
-					{% for src in row %}
-						<td{% if styles %} style="{{ styles }}"{% endif %}>{{ src|image }}</td>
-					{% endfor %}
-				</tr>
-			{% endfor %}
-		</table>
-	{% endspaceless %}
+    {% spaceless %}
+        {% if headline %}
+            <{{ hl }}>{{ headline }}</{{ hl }}>
+        {% endif %}
+        <table>
+            {% for row in rows %}
+                <tr>
+                    {% for src in row %}
+                        <td{% if styles %} style="{{ styles }}"{% endif %}>{{ src|image }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endspaceless %}
 {% endblock %}
