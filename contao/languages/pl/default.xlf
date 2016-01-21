@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:00:26+02:00" original="default" source-language="en" target-language="pl">
+    <body>
+      <trans-unit id="MCE.gallery.0">
+        <source>Gallery</source>
+        
+      </trans-unit>
+      <trans-unit id="MCE.gallery.1">
+        <source>Generates a lightbox image gallery.</source>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

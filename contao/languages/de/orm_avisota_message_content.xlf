@@ -1,0 +1,36 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:00:26+02:00" original="orm_avisota_message_content" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="orm_avisota_message_content.perRow.0">
+        <source>Thumbnails per row</source>
+        <target>Vorschaubilder pro Reihe</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.perRow.1">
+        <source>The number of image thumbnails per row.</source>
+        <target>Bitte geben Sie die Anzahl der Vorschaubilder pro Reihe an.,</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.0">
+        <source>Order by</source>
+        <target>Sortieren nach ...</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.1">
+        <source>Please choose the sort order.</source>
+        <target>Bitte wählen Sie die Sortierreihenfolge aus.</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.imageSources.0">
+        <source>Source files</source>
+        <target>Quelldateien</target>
+        
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.imageSources.1">
+        <source>Please select one or more files or folders from the files directory. If you select a folder, its files will be included automatically.</source>
+        <target>Wählen Sie eine oder mehrere Dateien aus der Dateiverwaltung aus. Falls Sie einen Ordner auswählen werden die darin enthaltenen Dateien automatisch hinzugefügt.</target>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
