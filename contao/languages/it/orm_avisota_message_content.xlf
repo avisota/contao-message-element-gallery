@@ -1,0 +1,54 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:00:26+02:00" original="orm_avisota_message_content" source-language="en" target-language="it">
+    <body>
+      <trans-unit id="orm_avisota_message_content.perRow.0">
+        <source>Thumbnails per row</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.perRow.1">
+        <source>The number of image thumbnails per row.</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.0">
+        <source>Order by</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.1">
+        <source>Please choose the sort order.</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.imageSources.0">
+        <source>Source files</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.imageSources.1">
+        <source>Please select one or more files or folders from the files directory. If you select a folder, its files will be included automatically.</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.name_asc">
+        <source>By name ascending</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.name_desc">
+        <source>By name descending</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.date_asc">
+        <source>By date ascending</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.date_desc">
+        <source>By date descending</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.meta">
+        <source>By meta description</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.random">
+        <source>Random mode</source>
+
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

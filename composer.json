@@ -43,19 +43,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Avisota\\Contao\\Message\\Element\\Gallery": "src/"
+            "Avisota\\Contao\\Message\\Element\\Gallery\\": "src/"
         }
     },
     "extra": {
         "contao": {
             "sources": {
                 "contao": "system/modules/avisota-message-element-gallery"
-            },
-            "transifex": {
-                "project": "avisota-contao",
-                "prefix": "contao-message-element-gallery-",
-                "languages_cto": "contao/languages",
-                "languages_tx": ".tx"
             }
         },
         "branch-alias": {
