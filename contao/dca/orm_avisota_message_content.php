@@ -64,6 +64,6 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy'] = array
     'exclude'   => true,
     'inputType' => 'select',
     'options'   => array('name_asc', 'name_desc', 'date_asc', 'date_desc', 'meta', 'random'),
-    'reference' => &$GLOBALS['TL_LANG']['orm_avisota_message_content'],
+    'reference' => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy'],
     'eval'      => array('tl_class' => 'w50')
 );
