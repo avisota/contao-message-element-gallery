@@ -29,6 +29,7 @@ class Version20140327 extends AbstractMigration
      * @param Schema $schema
      *
      * @throws \Doctrine\DBAL\Schema\SchemaException
+     * @SuppressWarnings(PHPMD.ShortMethodName)
      */
     public function up(Schema $schema)
     {
