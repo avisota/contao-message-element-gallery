@@ -39,7 +39,8 @@ class Version20140327 extends AbstractMigration
         $table = $schema->getTable('orm_avisota_message_content');
 
         if ($table->hasColumn('multiSRC')) {
-            $this->addSql('ALTER TABLE orm_avisota_message_content CHANGE multiSRC imageSources BLOB DEFAULT NULL COMMENT \'(DC2Type:serializedBinary)\'');
+            $this->addSql('ALTER TABLE orm_avisota_message_content ' .
+                          'CHANGE multiSRC imageSources BLOB DEFAULT NULL COMMENT \'(DC2Type:serializedBinary)\'');
         }
     }
 
@@ -57,7 +58,8 @@ class Version20140327 extends AbstractMigration
         $table = $schema->getTable('orm_avisota_message_content');
 
         if ($table->hasColumn('imageSources')) {
-            $this->addSql('ALTER TABLE orm_avisota_message_content CHANGE imageSources multiSRC BLOB DEFAULT NULL COMMENT \'(DC2Type:serializedBinary)\'');
+            $this->addSql('ALTER TABLE orm_avisota_message_content CHANGE' .
+                          ' imageSources multiSRC BLOB DEFAULT NULL COMMENT \'(DC2Type:serializedBinary)\'');
         }
     }
 }
