@@ -135,8 +135,8 @@ class DefaultRenderer implements EventSubscriberInterface
             $sorting = array_keys($sorting);
             uksort(
                 $images,
-                function ($a, $b) use ($sorting) {
-                    return array_search($a, $sorting) - array_search($b, $sorting);
+                function ($primary, $secondary) use ($sorting) {
+                    return array_search($primary, $sorting) - array_search($secondary, $sorting);
                 }
             );
         }
