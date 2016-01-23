@@ -48,7 +48,7 @@ class DefaultRenderer implements EventSubscriberInterface
      *
      * @return array The event names to listen to
      */
-    static public function getSubscribedEvents()
+    public static function getSubscribedEvents()
     {
         return array(
             AvisotaMessageEvents::RENDER_MESSAGE_CONTENT => 'renderContent',
@@ -63,7 +63,10 @@ class DefaultRenderer implements EventSubscriberInterface
      * @return string
      * @internal param MessageContent $content
      * @internal param RecipientInterface $recipient
-     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function renderContent(RenderMessageContentEvent $event)
     {
@@ -135,8 +138,8 @@ class DefaultRenderer implements EventSubscriberInterface
             $sorting = array_keys($sorting);
             uksort(
                 $images,
-                function ($a, $b) use ($sorting) {
-                    return array_search($a, $sorting) - array_search($b, $sorting);
+                function ($primary, $secondary) use ($sorting) {
+                    return array_search($primary, $sorting) - array_search($secondary, $sorting);
                 }
             );
         }
