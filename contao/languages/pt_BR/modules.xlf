@@ -3,6 +3,7 @@
     <body>
       <trans-unit id="MOD.avisota-message-element-gallery.0">
         <source>Avisota - Message element &quot;Gallery&quot;</source>
+        <target>Avisota - Elemento de mensagem &quot;Galeria&quot;</target>
         
       </trans-unit>
       <trans-unit id="MOD.avisota-message-element-gallery.1">

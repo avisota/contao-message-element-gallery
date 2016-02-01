@@ -3,10 +3,12 @@
     <body>
       <trans-unit id="orm_avisota_message_content.perRow.0">
         <source>Thumbnails per row</source>
+        <target>Miniaturas por linha</target>
 
       </trans-unit>
       <trans-unit id="orm_avisota_message_content.perRow.1">
         <source>The number of image thumbnails per row.</source>
+        <target>O número de miniaturas de imagem por linha.</target>
 
       </trans-unit>
       <trans-unit id="orm_avisota_message_content.sortBy.0">
