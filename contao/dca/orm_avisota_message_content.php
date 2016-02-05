@@ -17,8 +17,7 @@
  * Table orm_avisota_message_content
  * Entity Avisota\Contao:MessageContent
  */
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = array
-(
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = array(
     'type'      => array('cell', 'type', 'headline'),
     'source'    => array('imageSources', 'orderSRC',),
     'image'     => array('imageSize', 'imageMargin', 'perRow', 'sortBy'),
@@ -26,8 +25,7 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = a
     'published' => array('invisible'),
 );
 
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = array
-(
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = array(
     'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['imageSources'],
     'exclude'   => true,
     'inputType' => 'fileTree',
@@ -42,13 +40,11 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = ar
     ),
 );
 
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['orderSRC'] = array
-(
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['orderSRC'] = array(
     'inputType' => 'fileTreeOrder',
 );
 
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow'] = array
-(
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow'] = array(
     'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['perRow'],
     'default'   => 4,
     'exclude'   => true,
@@ -56,8 +52,8 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow'] = array
     'options'   => array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12),
     'eval'      => array('tl_class' => 'w50')
 );
-$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy'] = array
-(
+
+$GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy'] = array(
     'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy'],
     'exclude'   => true,
     'inputType' => 'select',
