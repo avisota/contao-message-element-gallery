@@ -87,8 +87,12 @@ class DefaultRenderer implements EventSubscriberInterface
         $size    = $content->getImageSize();
         $images  = array();
         $sorting = array();
-        foreach ($context['imageSources'] as $index => $file) {
-            $context['imageSources'][$index] = $file = \Compat::resolveFile($file);
+        $imageSources = 'imageSources';
+        if ($content->getSortBy() === 'custom') {
+            $imageSources = 'orderSRC';
+        }
+        foreach ($context[$imageSources] as $index => $file) {
+            $context[$imageSources][$index] = $file = \Compat::resolveFile($file);
 
             switch ($content->getSortBy()) {
                 case 'name_asc':

@@ -20,7 +20,7 @@
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['metapalettes']['gallery'] = array
 (
     'type'      => array('cell', 'type', 'headline'),
-    'source'    => array('imageSources'),
+    'source'    => array('imageSources', 'orderSRC',),
     'image'     => array('imageSize', 'imageMargin', 'perRow', 'sortBy'),
     'expert'    => array(':hide', 'cssID', 'space'),
     'published' => array('invisible'),
@@ -32,23 +32,22 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = ar
     'exclude'   => true,
     'inputType' => 'fileTree',
     'eval'      => array(
-        'fieldType' => 'checkbox',
-        'files'     => true,
-        'mandatory' => true,
-        'multiple'  => true,
-        // does not work until DCG can handle this
-        // 'orderField' => 'orderSRC',
+        'fieldType'  => 'checkbox',
+        'files'      => true,
+        'mandatory'  => true,
+        'multiple'   => true,
+        'extensions' => Config::get('validImageTypes'),
+        'orderField' => 'orderSRC',
+        'isGallery'  => true,
     ),
 );
-/*
+
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['orderSRC'] = array
 (
-	'label' => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['orderSRC'],
-	'field' => array(
-		'type' => 'serializedBinary',
-	),
+    'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['orderSRC'],
+    'inputType' => 'fileTreeOrder',
 );
-*/
+
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['perRow'] = array
 (
     'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['perRow'],
@@ -63,7 +62,7 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['sortBy'] = array
     'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy'],
     'exclude'   => true,
     'inputType' => 'select',
-    'options'   => array('name_asc', 'name_desc', 'date_asc', 'date_desc', 'meta', 'random'),
+    'options'   => array('custom', 'name_asc', 'name_desc', 'date_asc', 'date_desc', 'meta', 'random'),
     'reference' => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['sortBy'],
     'eval'      => array('tl_class' => 'w50')
 );

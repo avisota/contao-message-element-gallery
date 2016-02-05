@@ -13,8 +13,10 @@
  * @filesource
  */
 
+use Avisota\Contao\Message\Element\Gallery\DataContainer\OrderSRCField;
 use Avisota\Contao\Message\Element\Gallery\DefaultRenderer;
 
 return array(
-    new DefaultRenderer()
+    new DefaultRenderer(),
+    new OrderSRCField()
 );
