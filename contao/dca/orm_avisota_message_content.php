@@ -44,7 +44,6 @@ $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['imageSources'] = ar
 
 $GLOBALS['TL_DCA']['orm_avisota_message_content']['fields']['orderSRC'] = array
 (
-    'label'     => &$GLOBALS['TL_LANG']['orm_avisota_message_content']['orderSRC'],
     'inputType' => 'fileTreeOrder',
 );
 
