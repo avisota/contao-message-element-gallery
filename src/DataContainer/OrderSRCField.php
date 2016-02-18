@@ -49,6 +49,7 @@ class OrderSRCField implements EventSubscriberInterface
         );
     }
 
+    // Todo remove this if dc-general has the hotfix/FileTreeOrder
     public function parseDefaultValue(PreEditModelEvent $event, $name, EventDispatcher $eventDispatcher)
     {
         $properties = $event->getModel()->getPropertiesAsArray();
