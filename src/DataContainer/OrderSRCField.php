@@ -59,6 +59,7 @@ class OrderSRCField implements EventSubscriberInterface
      * @param PreEditModelEvent $event
      * @param                   $name
      * @param EventDispatcher   $eventDispatcher
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function parseDefaultValue(PreEditModelEvent $event, $name, EventDispatcher $eventDispatcher)
     {
