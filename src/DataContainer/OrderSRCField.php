@@ -19,6 +19,11 @@ use ContaoCommunityAlliance\DcGeneral\Event\PreEditModelEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+/**
+ * Class OrderSRCField
+ *
+ * @package Avisota\Contao\Message\Element\Gallery\DataContainer
+ */
 class OrderSRCField implements EventSubscriberInterface
 {
 
@@ -50,6 +55,11 @@ class OrderSRCField implements EventSubscriberInterface
     }
 
     // Todo remove this if dc-general has the hotfix/FileTreeOrder
+    /**
+     * @param PreEditModelEvent $event
+     * @param                   $name
+     * @param EventDispatcher   $eventDispatcher
+     */
     public function parseDefaultValue(PreEditModelEvent $event, $name, EventDispatcher $eventDispatcher)
     {
         $properties = $event->getModel()->getPropertiesAsArray();
