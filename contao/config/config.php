@@ -17,8 +17,3 @@
  * Message elements
  */
 $GLOBALS['TL_MCE']['images'][] = 'gallery';
-
-/**
- * Events
- */
-$GLOBALS['TL_EVENT_SUBSCRIBERS'][] = 'Avisota\Contao\Message\Element\Gallery\DefaultRenderer';

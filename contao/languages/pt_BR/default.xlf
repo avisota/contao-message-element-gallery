@@ -3,10 +3,12 @@
     <body>
       <trans-unit id="MCE.gallery.0">
         <source>Gallery</source>
+        <target>Galeria</target>
         
       </trans-unit>
       <trans-unit id="MCE.gallery.1">
         <source>Generates a lightbox image gallery.</source>
+        <target>Gera uma galeria de imagens lightbox.</target>
         
       </trans-unit>
     </body>

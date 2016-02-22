@@ -31,6 +31,10 @@
         <target>Tscherna ina u pliras datotecas u ordinaturs da la structura d'ordinaturs. Sche ti tschernas in ordinatur vegnan tut las datotecas lien integradas automaticamain</target>
 
       </trans-unit>
+      <trans-unit id="orm_avisota_message_content.sortBy.custom">
+        <source>Custom order</source>
+
+      </trans-unit>
       <trans-unit id="orm_avisota_message_content.sortBy.name_asc">
         <source>By name ascending</source>
 
