@@ -51,7 +51,9 @@ class DefaultRenderer implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            AvisotaMessageEvents::RENDER_MESSAGE_CONTENT => 'renderContent',
+            AvisotaMessageEvents::RENDER_MESSAGE_CONTENT => array(
+                array('renderContent'),
+            ),
         );
     }
 
@@ -85,9 +87,9 @@ class DefaultRenderer implements EventSubscriberInterface
 
         $context = $entityAccessor->getProperties($content);
 
-        $size    = $content->getImageSize();
-        $images  = array();
-        $sorting = array();
+        $size         = $content->getImageSize();
+        $images       = array();
+        $sorting      = array();
         $imageSources = 'imageSources';
         if ($content->getSortBy() === 'custom') {
             $imageSources = 'orderSRC';
