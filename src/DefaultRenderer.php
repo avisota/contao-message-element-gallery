@@ -18,6 +18,7 @@ namespace Avisota\Contao\Message\Element\Gallery;
 use Avisota\Contao\Message\Core\Event\AvisotaMessageEvents;
 use Avisota\Contao\Message\Core\Event\RenderMessageContentEvent;
 use Contao\Doctrine\ORM\EntityAccessor;
+use Contao\FilesModel;
 use ContaoCommunityAlliance\Contao\Bindings\ContaoEvents;
 use ContaoCommunityAlliance\Contao\Bindings\Events\Image\ResizeImageEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -93,7 +94,7 @@ class DefaultRenderer implements EventSubscriberInterface
             $imageSources = 'orderSRC';
         }
         foreach ($context[$imageSources] as $index => $file) {
-            $context[$imageSources][$index] = $file = \Compat::resolveFile($file);
+            $context[$imageSources][$index] = $file = FilesModel::findByUuid($context[$imageSources][$index])->path;
 
             switch ($content->getSortBy()) {
                 case 'name_asc':
