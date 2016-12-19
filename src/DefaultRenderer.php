@@ -116,7 +116,7 @@ class DefaultRenderer implements EventSubscriberInterface
                     break;
 
                 case 'random':
-                    $sorting[] = rand(-PHP_INT_MAX, PHP_INT_MAX);
+                    $sorting[] = mt_rand(-PHP_INT_MAX, PHP_INT_MAX);
             }
 
             $resizeImageEvent = new ResizeImageEvent($file->path, $size[0], $size[1], $size[2]);
