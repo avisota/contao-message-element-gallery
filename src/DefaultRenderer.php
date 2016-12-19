@@ -18,6 +18,8 @@ namespace Avisota\Contao\Message\Element\Gallery;
 use Avisota\Contao\Message\Core\Event\AvisotaMessageEvents;
 use Avisota\Contao\Message\Core\Event\RenderMessageContentEvent;
 use Contao\Doctrine\ORM\EntityAccessor;
+use Contao\File;
+use Contao\FilesModel;
 use ContaoCommunityAlliance\Contao\Bindings\ContaoEvents;
 use ContaoCommunityAlliance\Contao\Bindings\Events\Image\ResizeImageEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -93,24 +95,31 @@ class DefaultRenderer implements EventSubscriberInterface
             $imageSources = 'orderSRC';
         }
         foreach ($context[$imageSources] as $index => $file) {
-            $context[$imageSources][$index] = $file = \Compat::resolveFile($file);
+            $context[$imageSources][$index] = FilesModel::findByUuid($context[$imageSources][$index])->path;
+
+            $file = new File($context[$imageSources][$index], true);
+
+            if (!$file->exists()) {
+                unset($context[$imageSources][$index]);
+                continue;
+            }
 
             switch ($content->getSortBy()) {
                 case 'name_asc':
                 case 'name_desc':
-                    $sorting[] = basename($file);
+                    $sorting[] = $file->name;
                     break;
 
                 case 'date_asc':
                 case 'date_desc':
-                    $sorting[] = filemtime(TL_ROOT . DIRECTORY_SEPARATOR . $file);
+                    $sorting[] = $file->mime;
                     break;
 
                 case 'random':
-                    $sorting[] = rand(-PHP_INT_MAX, PHP_INT_MAX);
+                    $sorting[] = mt_rand(-PHP_INT_MAX, PHP_INT_MAX);
             }
 
-            $resizeImageEvent = new ResizeImageEvent($file, $size[0], $size[1], $size[2]);
+            $resizeImageEvent = new ResizeImageEvent($file->path, $size[0], $size[1], $size[2]);
             $eventDispatcher->dispatch(ContaoEvents::IMAGE_RESIZE, $resizeImageEvent);
 
             $images[] = $resizeImageEvent->getResultImage();
